@@ -60,7 +60,8 @@ export default function Home() {
         crossOrigin="anonymous"
       >
         <source
-          src="https://res.cloudinary.com/dawgv7mq0/video/upload/v1774972034/doc_hero_2_nrqkzp.mp4"
+          // src="https://res.cloudinary.com/dawgv7mq0/video/upload/v1774972034/doc_hero_2_nrqkzp.mp4"
+          src="https://res.cloudinary.com/dawgv7mq0/video/upload/q_auto,f_auto/doctor_homepage_final_2_1_gvre7h.mp4"
           type="video/mp4"
         />
         Your browser does not support the video tag.
@@ -75,7 +76,9 @@ export default function Home() {
           poster="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 400 300'%3E%3Crect fill='%23000' width='400' height='300'/%3E%3C/svg%3E"
         >
           <source
-            src="https://res.cloudinary.com/dawgv7mq0/video/upload/v1774971876/doc_hero_1_kvy5yi.mp4"
+            //  src="https://res.cloudinary.com/dawgv7mq0/video/upload/v1774971876/doc_hero_1_kvy5yi.mp4"
+            src="https://res.cloudinary.com/dawgv7mq0/video/upload/q_auto,f_auto/doctor_homepage_final_1_1_wke3gh.mp4"
+           
             type="video/mp4"
           />
           Your browser does not support the video tag.
@@ -85,9 +88,9 @@ export default function Home() {
       <div ref={contentOverlayRef} className={styles.contentOverlay}>
         {/* Navbar */}
         <nav className={styles.navbar}>
-          <div className={styles.logo}>ADAMUS</div>
+          <div className={styles.logo}>N4Y</div> 
           <div className={styles.menuItems}>
-            <a href="#home">Home</a>
+            {/* <a href="#home">Home</a> */}
             <a href="#about">About</a>
             <a href="#services">Services</a>
             <a href="#contact">Contact</a>
@@ -103,6 +106,7 @@ export default function Home() {
             <Link href="/page2" className={styles.n4yLogoBlock}>
               <span className={styles.n4yTitle}>N4Y</span>
               <span className={styles.n4ySubtitle}>NONJUDGMENTAL 4 YOU</span>
+              <span className={styles.n4yExplore}>Explore</span>
             </Link>
             <div className={styles.taglineBlock}>
               <p className={styles.taglineMain}>No Judgment. Just You.</p>
@@ -111,15 +115,6 @@ export default function Home() {
                 be heard, and be understood.
               </p>
             </div>
-          </div>
-
-          {/* Right Panel — Large image */}
-          <div className={styles.heroRight}>
-            <img
-              src="https://res.cloudinary.com/da4i4bcnr/image/upload/v1777358145/file_00000000d420720bb431670530f4eed6-removebg-preview_eljtpp.png"
-              alt="Content Image"
-              className={styles.heroImage}
-            />
           </div>
 
         </div>

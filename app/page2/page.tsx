@@ -9,7 +9,8 @@ import { Swiper, SwiperSlide } from 'swiper/react';
 import 'swiper/css';
 import 'swiper/css/effect-coverflow';
 import 'swiper/css/pagination';
-import { EffectCoverflow, Pagination } from 'swiper/modules';
+import 'swiper/css/autoplay';
+import { EffectCoverflow, Pagination, Autoplay } from 'swiper/modules';
 
 export default function Page2() {
   const videoRef = useRef<HTMLVideoElement>(null);
@@ -40,10 +41,11 @@ export default function Page2() {
           muted
           playsInline
           autoPlay
+          onEnded={() => setVideosDone(true)}
         >
           <source
             // src="https://res.cloudinary.com/dawgv7mq0/video/upload/v1774971876/doc_hero_1_kvy5yi.mp4"
-            src="https://res.cloudinary.com/dawgv7mq0/video/upload/v1774972034/doc_hero_2_nrqkzp.mp4"
+            src="https://res.cloudinary.com/dawgv7mq0/video/upload/q_auto,f_auto/Doctor_transion_1_final_1_toxl15.mp4"
             type="video/mp4"
           />
         </video>
@@ -70,11 +72,6 @@ export default function Page2() {
           </div>
         </nav>
 
-        {/* Message Text */}
-        <div className={styles.messageSection}>
-          <h2 className={styles.messageText}>Options for the services should display.</h2>
-        </div>
-
         {/* Carousel Section */}
         <section className={styles.sliderSection}>
           <Swiper
@@ -84,7 +81,11 @@ export default function Page2() {
             slidesPerView={'auto'}
             observer={true}
             observeParents={true}
-            loop={false}
+            loop={true}
+            autoplay={{
+              delay: 4000,
+              disableOnInteraction: false,
+            }}
             coverflowEffect={{
               rotate: 30,
               stretch: 0,
@@ -93,30 +94,28 @@ export default function Page2() {
               slideShadows: true,
             }}
             pagination={{ clickable: true }}
-            modules={[EffectCoverflow, Pagination]}
+            modules={[EffectCoverflow, Pagination, Autoplay]}
             className={styles.mySwiper}
           >
-            {Array.from({ length: 10 }).map((_, slideIndex) => (
+            {[
+              'https://res.cloudinary.com/dawgv7mq0/image/upload/v1778346777/RelationshipSexualHealt_lww7mc.jpg',
+              'https://res.cloudinary.com/dawgv7mq0/image/upload/v1778346861/EmotionalHealingLifeMeanin_jcbbnr.jpg',
+              'https://res.cloudinary.com/dawgv7mq0/image/upload/v1778346901/ProvenTherapyMethod_o9dkhs.jpg',
+              'https://res.cloudinary.com/dawgv7mq0/image/upload/v1778346939/ChildrenTeensFocusProblem_dduppy.jpg',
+              'https://res.cloudinary.com/dawgv7mq0/image/upload/v1778346998/MoodHabitsEatingProblem_dwrptc.jpg',
+              'https://res.cloudinary.com/dawgv7mq0/image/upload/v1778347041/SeriousMentalHealthChallenge_axl5ty.jpg',
+              'https://res.cloudinary.com/dawgv7mq0/image/upload/v1778347077/FeelingLowStressedorUnabletoSlee_rlry0i.jpg',
+              'https://res.cloudinary.com/dawgv7mq0/image/upload/v1778347120/ManagingEmotionsBehavio_rgmps5.jpg',
+              'https://res.cloudinary.com/dawgv7mq0/image/upload/v1778347183/CareerGoalsProductivit_fu3shq.jpg',
+              'https://res.cloudinary.com/dawgv7mq0/image/upload/v1778347228/FamilyLifeStageSuppor_zlw5yy.jpg',
+            ].map((imgUrl, slideIndex) => (
               <SwiperSlide key={slideIndex} className={styles.swiperSlide}>
                 <div className={styles.card}>
-                  <img 
-                    src={`https://picsum.photos/400/600?random=${slideIndex}`} 
-                    alt={`Slide ${slideIndex + 1}`} 
-                    className={styles.cardImg} 
+                  <img
+                    src={imgUrl}
+                    alt={`Slide ${slideIndex + 1}`}
+                    className={styles.cardImg}
                   />
-                  <div className={styles.cardContent}>
-                    <h3>Service Group {slideIndex + 1}</h3>
-                    <div className={styles.optionsList}>
-                      {Array.from({ length: 5 }).map((_, optionIndex) => {
-                        const serviceNumber = slideIndex * 5 + optionIndex + 1;
-                        return (
-                          <div key={optionIndex} className={styles.optionItem}>
-                            Service {serviceNumber}
-                          </div>
-                        );
-                      })}
-                    </div>
-                  </div>
                 </div>
               </SwiperSlide>
             ))}
