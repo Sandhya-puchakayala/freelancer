@@ -63,11 +63,11 @@ export default function Page2() {
 
         {/* Navbar */}
         <nav className={styles.navbar}>
-          <Link href="/" className={styles.logo}>ADAMUS</Link>
+          <Link href="/" className={styles.logo}>N4Y</Link>
           <div className={styles.menuItems}>
-            <a href="#">About</a>
+            <Link href="/about">About</Link>
             <a href="#">Work</a>
-            <a href="#">Contact</a>
+            <Link href="/contact">Contact</Link>
             <Link href="/" className={styles.backBtn}>← Back</Link>
           </div>
         </nav>
@@ -110,13 +110,13 @@ export default function Page2() {
               'https://res.cloudinary.com/dawgv7mq0/image/upload/v1778347228/FamilyLifeStageSuppor_zlw5yy.jpg',
             ].map((imgUrl, slideIndex) => (
               <SwiperSlide key={slideIndex} className={styles.swiperSlide}>
-                <div className={styles.card}>
+                <Link href="/contact" className={styles.card}>
                   <img
                     src={imgUrl}
                     alt={`Slide ${slideIndex + 1}`}
                     className={styles.cardImg}
                   />
-                </div>
+                </Link>
               </SwiperSlide>
             ))}
           </Swiper>

@@ -91,9 +91,9 @@ export default function Home() {
           <div className={styles.logo}>N4Y</div> 
           <div className={styles.menuItems}>
             {/* <a href="#home">Home</a> */}
-            <a href="#about">About</a>
+            <Link href="/about">About</Link>
             <a href="#services">Services</a>
-            <a href="#contact">Contact</a>
+            <Link href="/contact">Contact</Link>
             <button className={styles.menuButton}>Menu</button>
           </div>
         </nav>
