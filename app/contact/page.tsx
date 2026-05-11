@@ -18,7 +18,7 @@ export default function ContactPage() {
     setFormData(prev => ({ ...prev, [e.target.name]: e.target.value }));
   };
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
     setSubmitted(true);
   };
@@ -39,13 +39,13 @@ export default function ContactPage() {
               A member of our team will reach out to you shortly.<br />
               No judgment — just support.
             </p>
-            <Link href="/page2" className={styles.backLink}>← Back to Services</Link>
+            <Link href="/page2/cards" className={styles.backLink}>← Back to Services</Link>
           </div>
         ) : (
           <div className={styles.card}>
             <div className={styles.cardTopRow}>
               <span className={styles.tag}>NONJUDGMENTAL 4 YOU</span>
-              <Link href="/page2" className={styles.closeBtn} aria-label="Close">✕</Link>
+              <Link href="/page2/cards" className={styles.closeBtn} aria-label="Close">✕</Link>
             </div>
             <div className={styles.cardHeader}>
               <h1 className={styles.title}>Talk to Us</h1>
