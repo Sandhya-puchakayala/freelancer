@@ -29,17 +29,6 @@ export default function ContactPage() {
       <div className={styles.bg} />
       <div className={styles.bgOverlay} />
 
-      {/* Navbar */}
-      <nav className={styles.navbar}>
-        <Link href="/" className={styles.logo}>N4Y</Link>
-        <div className={styles.menuItems}>
-          <a href="#">About</a>
-          <a href="#">Work</a>
-          <a href="#">Contact</a>
-          <Link href="/page2" className={styles.backBtn}>← Back</Link>
-        </div>
-      </nav>
-
       {/* Form Card */}
       <main className={styles.main}>
         {submitted ? (
@@ -54,8 +43,11 @@ export default function ContactPage() {
           </div>
         ) : (
           <div className={styles.card}>
-            <div className={styles.cardHeader}>
+            <div className={styles.cardTopRow}>
               <span className={styles.tag}>NONJUDGMENTAL 4 YOU</span>
+              <Link href="/page2" className={styles.closeBtn} aria-label="Close">✕</Link>
+            </div>
+            <div className={styles.cardHeader}>
               <h1 className={styles.title}>Talk to Us</h1>
               <p className={styles.subtitle}>
                 A safe space starts with a conversation. Fill in your details and we&apos;ll be in touch.

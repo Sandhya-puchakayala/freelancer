@@ -191,7 +191,7 @@
   position: relative;
   z-index: 10;
   width: 100%;
-  padding-top: 42vh;
+  padding-top: 48vh;
   padding-bottom: 50px;
   opacity: 0;
 }
@@ -205,22 +205,24 @@
   width: 100%;
   padding-top: 0;
   padding-bottom: 80px;
-  min-height: 550px;
+  min-height: 480px;
   display: block;
 }
 
 .swiperSlide {
   background-position: center;
   background-size: cover;
-  width: 320px !important;
-  height: 480px !important;
-  min-height: 480px !important;
+  width: 275px !important;
+  height: 415px !important;
+  min-height: 415px !important;
   display: flex !important;
   flex-direction: column;
   filter: blur(2px);
   transition: filter 0.3s ease;
   background-color: rgba(40, 40, 40, 0.8) !important;
   border: 1px solid rgba(255,255,255,0.2) !important;
+  border-radius: 16px !important;
+  overflow: hidden !important;
 }
 
 .mySwiper :global(.swiper-slide-active) {
@@ -334,14 +336,17 @@
   .messageText { font-size: 1.6rem; padding: 0 20px; }
 
   .swiperSlide {
-    width: 280px !important;
-    height: 440px;
+    width: 240px !important;
+    height: 370px !important;
+    min-height: 370px !important;
   }
 }
 
 @media (max-width: 480px) {
   .messageText { font-size: 1.4rem; }
   .swiperSlide {
-    width: 250px !important;
+    width: 210px !important;
+    height: 330px !important;
+    min-height: 330px !important;
   }
 }
